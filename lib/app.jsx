@@ -7,6 +7,7 @@ var boxStyle = {
 	'width':'100px'
 };
 
+/*
 var Counter = React.createClass({
   getInitialState: function() {
     // naming it initialX clearly indicates that the only purpose
@@ -19,22 +20,25 @@ var Counter = React.createClass({
   },
 
   render: function() {
-    return react.createElemebt("div", {onClick: this.handleClick}, this.state.count);
+    return <div onClick={this.handleClick}>{this.state.count}</div>;
   }
 });
 
 ReactDOM.render(<Counter initialCount={7}/>, mountNode);
+*/
+
+
 
 var Box = React.createClass({
-  /**
-   * Render a HTML button
-   * @return {ReactElement}
-   */
+	getInitialState: function() {
+	return (value : this.props.initialValue)
+	},
   'render': function onRender () {
     return (
-      <button style={boxStyle}>{this.props.value}</button>
+      <button style={boxStyle}>{this.state.value}</button>
     );
   }
 });
 
-React.render(<Box value='Y'/>, document.body);
+React.render(<Box initialValue='Y'/>, document.body);
+
